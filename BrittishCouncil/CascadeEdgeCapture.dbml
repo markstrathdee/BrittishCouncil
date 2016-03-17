@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="LocalEventDatabase" Class="CascadeEdgeCaptureDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=(LocalDB)\v11.0;AttachDbFilename=|DataDirectory|\LocalEventDatabase.mdf;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="LocalEventDatabaseConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.TableLocalAdmins" Member="TableLocalAdmins">
+    <Type Name="TableLocalAdmin">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="LocalAdminUsername" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LocalAdminPassword" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="LocalAdminFName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="LocalAdminLName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="LocalAdminEmail" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TableLocalEvents" Member="TableLocalEvents">
+    <Type Name="TableLocalEvent">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LocalCustomerID" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="LocalEventID" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="LocalEventName" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="LocalEventDescription" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="LocalEventSite" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="LocalEventStatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LocalEventReleaseDate" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="LocalEventDateCreated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LocalEventDateModified" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LocalAssetFileName" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="LocalAssetID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

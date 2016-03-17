@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="CascadeEdgeCapture">
+  <DataContextMoniker Name="/CascadeEdgeCaptureDataContext" />
+  <nestedChildShapes>
+    <classShape Id="ebbf4540-866d-4461-8d01-af5d0ce1f362" absoluteBounds="0.75, 0.75, 2, 1.9631982421875">
+      <DataClassMoniker Name="/CascadeEdgeCaptureDataContext/TableLocalAdmin" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a557f901-340d-4d09-9a36-781eea01815e" absoluteBounds="0.765, 1.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e0800145-646d-4942-91a7-a2652b75faad" absoluteBounds="3.75, 0.75, 2, 3.1170068359375005">
+      <DataClassMoniker Name="/CascadeEdgeCaptureDataContext/TableLocalEvent" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1596e277-955e-41b9-a5f3-5111d3e6b67b" absoluteBounds="3.765, 1.21, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

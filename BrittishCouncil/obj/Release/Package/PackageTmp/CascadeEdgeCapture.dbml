@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="cascade" Class="CascadeEdgeCaptureDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=cascadedbprod.coan9gitkv2g.us-west-2.rds.amazonaws.com;Initial Catalog=cascade;User ID=sa" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="cascadeConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.TableAdmin" Member="TableAdmins">
+    <Type Name="TableAdmin">
+      <Column Name="AdminID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AdminFName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AdminEmail" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="AdminLName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="AdminRole" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="AdminPassword" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TableUsers" Member="TableUsers">
+    <Type Name="TableUser">
+      <Column Name="CustomerID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="EventID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="UserID" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UserFName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UserLName" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UserCompanyName" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="UserEmail" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="UserPhone" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UserTwitter" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="UserFacebook" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="UserLinkedIn" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="UserEmailOptIn" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UserSocialOptIn" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UserAddressStreet1" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="UserAddressStreet2" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="UserAddressCity" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="UserAddressZip" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="UserAddressState" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="UserAddressCountry" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="UserTitle" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UserHandle" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UserDepartment" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UserCascadeProfile" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UserIntegrationKey" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="UserDateCreated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SecurityRoleID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SkinID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BonusPoints" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ProfileID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="GroupID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UserDateModified" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UserQuestionsComments" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="UserDepartmentRole" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UserAddressRegion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UserAddressProvince" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="AttendedStatus" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SpokenLanguage" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UsersortEvents" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="UserLandingPage" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="UserReferrerSource" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Association Name="TableUser_TableAttendanceStatus" Member="TableAttendanceStatus" ThisKey="UserID" OtherKey="UserID" Type="TableAttendanceStatus" />
+      <Association Name="TableUser_TableGroup" Member="TableGroups" ThisKey="UserID" OtherKey="UserID" Type="TableGroup" />
+      <Association Name="TableProfile_TableUser" Member="TableProfile" ThisKey="ProfileID" OtherKey="ProfileID" Type="TableProfile" IsForeignKey="true" />
+      <Association Name="TableRole_TableUser" Member="TableRole" ThisKey="SecurityRoleID" OtherKey="SecurityRoleID" Type="TableRole" IsForeignKey="true" />
+      <Association Name="TableSkin_TableUser" Member="TableSkin" ThisKey="SkinID" OtherKey="SkinID" Type="TableSkin" IsForeignKey="true" />
+      <Association Name="TableSkin_TableUser1" Member="TableSkin1" ThisKey="SkinID" OtherKey="SkinID" Type="TableSkin" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TableAssets" Member="TableAssets">
+    <Type Name="TableAsset">
+      <Column Name="CustomerID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="EventID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AssetID" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AssetURL" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="AssetResolution" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="AssetDateCreated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="AssetTypeID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AssetName" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="AssetDescription" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Association Name="TableAssetType_TableAsset" Member="TableAssetType" ThisKey="AssetTypeID" OtherKey="AssetTypeID" Type="TableAssetType" IsForeignKey="true" />
+      <Association Name="TableCustomer_TableAsset" Member="TableCustomer" ThisKey="CustomerID" OtherKey="CustomerID" Type="TableCustomer" IsForeignKey="true" />
+      <Association Name="TableEvent_TableAsset" Member="TableEvent" ThisKey="EventID" OtherKey="EventID" Type="TableEvent" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TableAssetTracking" Member="TableAssetTrackings">
+    <Type Name="TableAssetTracking">
+      <Column Name="EventID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="UserID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CustomerID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TrackingID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AssetID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AssetStatistics" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="TrackAssetDateCreated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TrackingArrivedDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TrackingDepartedDateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EventPageURL" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="IPAddress" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="EmailAddress" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="AssetStatus" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="UserAgent" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ReferrerSource" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ResellerID" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="LandingPage" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="sortEvents" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TableAssetType" Member="TableAssetTypes">
+    <Type Name="TableAssetType">
+      <Column Name="AssetTypeID" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="AssetTypeName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="TableAssetType_TableAsset" Member="TableAssets" ThisKey="AssetTypeID" OtherKey="AssetTypeID" Type="TableAsset" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TableAttendanceStatus" Member="TableAttendanceStatus">
+    <Type Name="TableAttendanceStatus">
+      <Column Name="EventID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="AttendedID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="AttendedStatus" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="UserID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="AttendanceDateCreated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="TableUser_TableAttendanceStatus" Member="TableUser" ThisKey="UserID" OtherKey="UserID" Type="TableUser" IsForeignKey="true" />
+      <Association Name="TableEvent_TableAttendanceStatus" Member="TableEvent" ThisKey="EventID" OtherKey="EventID" Type="TableEvent" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TableCustomers" Member="TableCustomers">
+    <Type Name="TableCustomer">
+      <Column Name="CustomerID" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CustomerName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="CustomerDateCreated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CustomerDescription" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="CustomerEmail" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Association Name="TableCustomer_TableAsset" Member="TableAssets" ThisKey="CustomerID" OtherKey="CustomerID" Type="TableAsset" />
+      <Association Name="TableCustomer_TableEvent" Member="TableEvents" ThisKey="CustomerID" OtherKey="CustomerID" Type="TableEvent" />
+      <Association Name="TableCustomer_TableGroup" Member="TableGroups" ThisKey="CustomerID" OtherKey="CustomerID" Type="TableGroup" />
+      <Association Name="TableCustomer_TableSkin" Member="TableSkins" ThisKey="CustomerID" OtherKey="CustomerID" Type="TableSkin" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TableEvents" Member="TableEvents">
+    <Type Name="TableEvent">
+      <Column Name="EventID" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CustomerID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="EventName" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="EventDescription" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="EventDuration" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="EventAsset" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="EventType" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EventStatusID" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="EventDateCreated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="EventTypeID" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="SkinID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UserID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="GroupID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="EventDateModified" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="EventReleaseDate" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="EventEOLDate" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="EventPageURL" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="StartTime" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="EndTime" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="EventStatus" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="RegistrationBodyHTML" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="RegistrationBodyPlain" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ReminderBodyHTML" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ReminderBodyPlain" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="SorryBodyHTML" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="SorryBodyPlain" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="VODAvailableBodyHTML" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="VODAvailableBodyPlain" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ReminderDeliveryDate" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SorryDeliveryDate" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="VODAvailableDeliveryDate" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EventRegPageURL" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="EventPlayerPageURL" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="EventLoginPageURL" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="CalendarURL" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="EmailRegistrationFrom" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="EmailRegistrationSubject" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="EmailRegistrationSendStatus" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="ContactBodyHTML" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ContactBodyPlain" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="EmailContactSendStatus" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="EmailContactSubject" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="EmailContactFrom" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ContactThankYouPage" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="RegCookieCreateStatus" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="EventQuestionRedirURL" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="PollRedirURL" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="EventSite" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Association Name="TableEvent_TableAsset" Member="TableAssets" ThisKey="EventID" OtherKey="EventID" Type="TableAsset" />
+      <Association Name="TableEvent_TableAttendanceStatus" Member="TableAttendanceStatus" ThisKey="EventID" OtherKey="EventID" Type="TableAttendanceStatus" />
+      <Association Name="TableEvent_TableGroup" Member="TableGroups" ThisKey="EventID" OtherKey="EventID" Type="TableGroup" />
+      <Association Name="TableCustomer_TableEvent" Member="TableCustomer" ThisKey="CustomerID" OtherKey="CustomerID" Type="TableCustomer" IsForeignKey="true" />
+      <Association Name="TableEventStatus_TableEvent" Member="TableEventStatus" ThisKey="EventStatusID" OtherKey="EventStatusID" Type="TableEventStatus" IsForeignKey="true" />
+      <Association Name="TableEventType_TableEvent" Member="TableEventType" ThisKey="EventTypeID" OtherKey="EventTypeID" Type="TableEventType" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TableEventStatus" Member="TableEventStatus">
+    <Type Name="TableEventStatus">
+      <Column Name="EventStatusID" Type="System.String" DbType="NVarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="EventStatusName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="TableEventStatus_TableEvent" Member="TableEvents" ThisKey="EventStatusID" OtherKey="EventStatusID" Type="TableEvent" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TableEventType" Member="TableEventTypes">
+    <Type Name="TableEventType">
+      <Column Name="EventTypeID" Type="System.String" DbType="NVarChar(5) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="EventTypeName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="TableEventType_TableEvent" Member="TableEvents" ThisKey="EventTypeID" OtherKey="EventTypeID" Type="TableEvent" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TableGroups" Member="TableGroups">
+    <Type Name="TableGroup">
+      <Column Name="CustomerID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="EventID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="UserID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="GroupID" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="GroupName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="TableCustomer_TableGroup" Member="TableCustomer" ThisKey="CustomerID" OtherKey="CustomerID" Type="TableCustomer" IsForeignKey="true" />
+      <Association Name="TableEvent_TableGroup" Member="TableEvent" ThisKey="EventID" OtherKey="EventID" Type="TableEvent" IsForeignKey="true" />
+      <Association Name="TableUser_TableGroup" Member="TableUser" ThisKey="UserID" OtherKey="UserID" Type="TableUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TablePolls" Member="TablePolls">
+    <Type Name="TablePoll">
+      <Column Name="CustomerID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PollID" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="EventID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="PollQuestion" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="PollAnswer" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="PollDateCreated" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ResellerID" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="PollQuestion01" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="PollAnswer01" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="PollQuestion02" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="PollAnswer02" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="PollQuestion03" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="PollAnswer03" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TableProfiles" Member="TableProfiles">
+    <Type Name="TableProfile">
+      <Column Name="ProfileID" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ProfileName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ProfileCreatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ProfileModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="TableProfile_TableUser" Member="TableUsers" ThisKey="ProfileID" OtherKey="ProfileID" Type="TableUser" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TableQuestions" Member="TableQuestions">
+    <Type Name="TableQuestion">
+      <Column Name="CustomerID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="QuestionID" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="EventID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="QuestionTitle" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="QuestionAnswer" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="QuestionDateCreated" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TableRoles" Member="TableRoles">
+    <Type Name="TableRole">
+      <Column Name="SecurityRoleID" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SecurityRoleName" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="TableRole_TableUser" Member="TableUsers" ThisKey="SecurityRoleID" OtherKey="SecurityRoleID" Type="TableUser" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TableSkins" Member="TableSkins">
+    <Type Name="TableSkin">
+      <Column Name="SkinID" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="SkinName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="SkinURL" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="CustomerID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="BonusPointsRequired" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SkinCreatedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SkinModifiedDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="TableSkin_TableUser" Member="TableUsers" ThisKey="SkinID" OtherKey="SkinID" Type="TableUser" />
+      <Association Name="TableSkin_TableUser1" Member="TableUsers1" ThisKey="SkinID" OtherKey="SkinID" Type="TableUser" />
+      <Association Name="TableCustomer_TableSkin" Member="TableCustomer" ThisKey="CustomerID" OtherKey="CustomerID" Type="TableCustomer" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
